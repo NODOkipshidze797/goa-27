@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Card</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0; /* Remove default body margins */
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Prevents content from overflowing rounded corners */
+            width: 500px; /* Adjust width as needed */
+        }
+
+        .top-section {
+            padding: 20px;
+        }
+
+        .guarantee {
+            color: #f0c808; /* Example goldish color */
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .bottom-section {
+            background-color: #40c4a4; /* Example teal color */
+            color: white;
+            display: flex;
+        }
+
+        .price-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .per-month {
+          font-size: 0.8em;
+          color: rgba(255,255,255,0.7);
+        }
+
+        .full-access {
+            font-size: 0.9em;
+        }
+
+        .why-us-section {
+            flex: 1;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        .why-us-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .why-us-section li {
+            margin-bottom: 5px;
+        }
+        .signup-button {
+            background-color: #90ee90; /* Example light green */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            text-decoration: none;
+            display:inline-block;
+        }
+        .signup-button:hover{
+            background-color: #70ee70;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="top-section">
+            <h2>Join our community</h2>
+            <p class="guarantee">30-day, hassle-free money back guarantee</p>
+            <p class="description">Gain access to our full library of tutorials along with expert code reviews.<br>
+            Perfect for any developers who are serious about honing their skills.</p>
+        </div>
+        <div class="bottom-section">
+            <div class="price-section">
+                <p class="price">$29 <span class="per-month">per month</span></p>
+                <p class="full-access">Full access for less than $1 a day</p>
+                <a href="#" class="signup-button">Sign Up</a>
+            </div>
+            <div class="why-us-section">
+                <ul>
+                    <li>Tutorials by industry experts</li>
+                    <li>Peer & expert code review</li>
+                    <li>Coding exercises</li>
+                    <li>Access to our GitHub repos</li>
+                    <li>Community forum</li>
+                    <li>Flashcard decks</li>
+                    <li>New videos every week</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

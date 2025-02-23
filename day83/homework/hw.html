@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip Clock</title>
+    <style>
+        body { background-color: black; color: white; font-family: Arial, sans-serif; text-align: center; }
+        .clock {
+            display: flex;
+            justify-content: center;
+            font-size: 4em;
+            font-weight: bold;
+            margin-top: 20vh;
+        }
+        .digit-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 10px;
+            margin: 5px;
+            border-radius: 10px;
+            position: relative;
+            min-width: 80px;
+        }
+        .digit-container::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="digit-container" id="hours"></div> :
+        <div class="digit-container" id="minutes"></div> :
+        <div class="digit-container" id="seconds"></div>
+    </div>
+    
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById("hours").innerText = String(now.getHours()).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(now.getSeconds()).padStart(2, '0');
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

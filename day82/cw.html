@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        #timer {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #message {
+            font-size: 1.5em;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <input type="number" id="inputTime" placeholder="Enter time in milliseconds (0-10000)" min="0" max="10000">
+    <div class="buttons">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn" disabled>Stop</button>
+    </div>
+    <div id="timer"></div>
+    <div id="message"></div>
+</div>
+
+<script>
+    let timerInterval;
+    let currentTime;
+    let isRunning = false;
+    const inputTime = document.getElementById('inputTime');
+    const timerDisplay = document.getElementById('timer');
+    const message = document.getElementById('message');
+    const startBtn = document.getElementById('startBtn');
+    const stopBtn = document.getElementById('stopBtn');
+    startBtn.addEventListener('click', function() {
+        const time = parseInt(inputTime.value);
+
+        if (time >= 0 && time <= 10000 && !isNaN(time)) {
+            currentTime = time;
+            isRunning = true;
+            message.textContent = ''; 
+            startBtn.disabled = true;
+            stopBtn.disabled = false;
+            timerInterval = setInterval(function() {
+                if (currentTime > 0) {
+                    timerDisplay.textContent = currentTime;
+                    currentTime--;
+                } else {
+                    clearInterval(timerInterval);
+                    timerDisplay.textContent = '';
+                    message.textContent = "Time's up!";
+                    isRunning = false;
+                    startBtn.disabled = false;
+                    stopBtn.disabled = true;
+                }
+            }, 1000);
+        } else {
+            message.textContent = "Please enter a valid time between 0 and 10000 ms.";
+        }
+    });
+    stopBtn.addEventListener('click', function() {
+        clearInterval(timerInterval);
+        timerDisplay.textContent = '';
+        message.textContent = 'Timer stopped.';
+        isRunning = false;
+        startBtn.disabled = false;
+        stopBtn.disabled = true;
+    });
+</script>
+
+</body>
+</html>

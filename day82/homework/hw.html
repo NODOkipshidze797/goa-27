@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gaacere wamze sazxelia bumbaiah gyat</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        timer { font-size: 2em; margin: 20px; }
+        button { font-size: 1em; padding: 10px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Countdown Timer</h1>
+    <input type="number" id="timeInput" min="0" max="10000" placeholder="Enter time (ms)">
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
+    <div id="timer"></div>
+    <script>
+        let interval, currentTime = 0, targetTime = 0;
+        function startTimer() {
+            targetTime = Math.min(Math.max(parseInt(document.getElementById("timeInput").value, 10), 0), 10000);
+            currentTime = 0; clearInterval(interval);
+            interval = setInterval(() => {
+                if (++currentTime < targetTime / 1000) document.getElementById("timer").innerText = currentTime;
+                else { clearInterval(interval); document.getElementById("timer").innerText = "Time's up"; }
+            }, 1000);
+        }
+        function stopTimer() { clearInterval(interval); }
+    </script>
+</body>
+</html>

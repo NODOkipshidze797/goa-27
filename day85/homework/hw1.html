@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByClassName მაგალითი</title>
+</head>
+<body>
+
+  <h2 class="message">მესიჯი 10</h2>
+  <h2 class="message">მესიჯი 10000000</h2>
+  <h2 class="message">მესიჯი 2</h2>
+  <button id="changeMessages">მესიჯების შეცვლა</button>
+
+  <script>
+   
+    const messages = document.getElementsByClassName('message');
+
+    document.getElementById('changeMessages').addEventListener('click', function () {
+      for (let i = 0; i < messages.length; i++) {
+        messages[i].textContent = 'შეცვლილი მესიჯი #' + (i + 1);
+      }
+    });
+  </script>
+
+</body>
+</html>

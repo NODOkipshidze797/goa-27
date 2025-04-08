@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementById</title>
+</head>
+<body>
+
+  <h1 id="title">მოგესალმებით!</h1>
+  <p id="description">ეს არის HTML.</p>
+  <button id="changeTextButton">ტექსტის შეცვლა</button>
+
+  <script>
+
+    const titleElement = document.getElementById('title');
+    const descriptionElement = document.getElementById('description');
+    const buttonElement = document.getElementById('changeTextButton');
+
+
+    buttonElement.addEventListener('click', function () {
+      titleElement.textContent = 'ტექსტი შეიცვალა!';
+      descriptionElement.textContent = 'თქვენ დააჭირეთ ღილაკს.';
+    });
+  </script>
+
+</body>
+</html>

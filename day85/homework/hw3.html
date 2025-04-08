@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>innerHTML მაგალითი</title>
+</head>
+<body>
+
+  <div id="content">
+    <h2>საწყისი სათაური</h2>
+    <p>ეს არის საწყისი პარაგრაფი.</p>
+  </div>
+
+  <button id="changeContent">შინაარსის შეცვლა</button>
+
+  <script>
+   
+    const contentDiv = document.getElementById('content');
+
+    document.getElementById('changeContent').addEventListener('click', function () {
+      contentDiv.innerHTML = `
+        <h2 style="color: green;">შეცვლილი სათაური</h2>
+        <p><strong>ეს არის ახალი პარაგრაფი</strong> რომელიც შეიცავს HTML ტეგებს.</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
+

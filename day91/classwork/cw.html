@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #container { display: flex; flex-direction: column; align-items: center; }
+        .box { background: steelblue; color: white; display: flex; justify-content: center; align-items: center; margin: 5px; }
+    </style>
+</head>
+<body>
+    <div id="container"><div class="box" style="width: 20px; height: 20px;">1</div></div>
+    <script>
+        let size = 20, c = document.getElementById("container");
+        for (let i = 2; i <= 11; i++) {
+            size *= 2;
+            let d = document.createElement("div");
+            d.className = "box";
+            d.style = `width:${size}px; height:${size}px;`;
+            d.textContent = i;
+            i % 2 ? c.append(d) : c.prepend(d);
+        }
+    </script>
+</body>
+</html>

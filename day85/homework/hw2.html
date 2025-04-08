@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>getElementsByTagName მაგალითი</title>
+</head>
+<body>
+
+  <p>პარაგრაფი 1</p>
+  <p>პარაგრაფი 2</p>
+  <p>პარაგრაფი 3</p>
+  <button id="changeParagraphs">ტექსტის შეცვლა</button>
+
+  <script>
+
+    const paragraphs = document.getElementsByTagName('p');
+
+    document.getElementById('changeParagraphs').addEventListener('click', function () {
+      for (let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].textContent = 'შეცვლილი პარაგრაფი #' + (i + 1);
+      }
+    });
+  </script>
+
+</body>
+</html>

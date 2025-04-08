@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>სტილის შეცვლა JS-ით</title>
+</head>
+<body>
+
+  <p id="myText">ეს არის ტექსტი, რომლის სტილსაც შევცვლით.</p>
+  <button id="styleButton">სტილის შეცვლა</button>
+
+  <script>
+    const myText = document.getElementById('myText');
+    const button = document.getElementById('styleButton');
+
+    button.addEventListener('click', function () {
+
+      myText.style.color = 'white';
+      myText.style.backgroundColor = 'blue';
+      myText.style.fontSize = '20px';
+      myText.style.padding = '10px';
+      myText.style.borderRadius = '8px';
+    });
+  </script>
+
+</body>
+</html>

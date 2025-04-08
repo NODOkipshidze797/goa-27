@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logo Switcher</title>
+  <style>
+    img {
+      width: 150px;
+      height: 150px;
+      display: block;
+      margin: 20px auto;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Logo">
+
+  <div style="text-align:center;">
+    <button onclick="changeLogo('react')">React</button>
+    <button onclick="changeLogo('javascript')">JavaScript</button>
+    <button onclick="changeLogo('html')">HTML</button>
+    <button onclick="changeLogo('css')">CSS</button>
+  </div>
+
+  <script>
+    function changeLogo(type) {
+      const logo = document.getElementById('logo');
+      switch (type) {
+        case 'react':
+          logo.src = 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg';
+          break;
+        case 'javascript':
+          logo.src = 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png';
+          break;
+        case 'html':
+          logo.src = 'https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg';
+          break;
+        case 'css':
+          logo.src = 'https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg';
+          break;
+      }
+    }
+  </script>
+
+</body>
+</html>

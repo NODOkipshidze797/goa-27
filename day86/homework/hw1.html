@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <title>10 div (class-ით) და ინდივიდუალური სტილები</title>
+</head>
+<body>
+
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+  <div class="box">Box 4</div>
+  <div class="box">Box 5</div>
+  <div class="box">Box 6</div>
+  <div class="box">Box 7</div>
+  <div class="box">Box 8</div>
+  <div class="box">Box 9</div>
+  <div class="box">Box 10</div>
+
+  <script>
+    const boxes = document.getElementsByClassName('box');
+
+    const colors = [
+      'red', 'blue', 'green', 'orange', 'purple',
+      'teal', 'brown', 'pink', 'yellow', 'gray'
+    ];
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].style.backgroundColor = colors[i];
+      boxes[i].style.color = (i === 8 || i === 7) ? 'black' : 'white';
+      boxes[i].style.padding = (10 + i * 5) + 'px';
+      boxes[i].style.margin = '6px';
+      boxes[i].style.borderRadius = '8px';
+      boxes[i].style.textAlign = 'center';
+      boxes[i].style.fontWeight = 'bold';
+      boxes[i].style.width = '150px';
+    }
+  </script>
+
+</body>
+</html>
